@@ -32,7 +32,7 @@ Implement a validation service that supports:
 | **Project Code**    | - Required<br>- Format: `PRJ-YEAR-001`           |
 
 #### 3. Implementation Requirements  
-- A sample validation rule exists in `./lib/validationRule.ts`  
+- A sample validation rule exists in `./lib/validationRules.ts`  
 - This rule must be used in the appropriate **service**  
 
 #### 4. Error Handling Requirements  
