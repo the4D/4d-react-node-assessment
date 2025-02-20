@@ -1,21 +1,18 @@
-## TITLE: Document Processing Pipeline
-**Priority:** High
-**Component:** Backend
+## TITLE: Document Processing Pipeline  
 
-**Description:**
-Create a document processing pipeline that can handle multiple file types (PDF, CSV, TXT) and extract relevant information to be displayed in the results page.
+**Priority:** High  
+**Component:** Backend  
 
-**Technical Requirements:**
-1. Implement document import functionality (CSV, PRF, TXT)
-2. Create file upload endpoint that accepts multiple file types
-3. Implement file type validation
-4. Create data extraction pipeline to get relevant fields (add your own validation on what you think makes sense (specifics))
-5. Implement error handling
+### Description  
+Develop a document processing pipeline capable of handling multiple file types (CSV, TXT) and extracting relevant information for display on the results page.  
 
-**Acceptance Criteria:**
-- System accepts PDF, CSV, and TXT files up to 10MB
-- Files are validated before processing
-- Document information is correctly extracted and stored in the server
-- Failed uploads provide clear error messages
-- Processed documents appear in results page
+### Technical Requirements  
+1. Implement document import functionality for CSV and TXT files.  
+2. Create a file upload endpoint that supports multiple file types.  
 
+### Acceptance Criteria  
+✅ The system accepts CSV and TXT files.
+✅ Files are validated before processing.  
+✅ Document information is correctly extracted and stored on the server.  
+✅ Failed uploads display clear error messages.  
+✅ Processed documents appear on the results page.  

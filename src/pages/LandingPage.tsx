@@ -15,7 +15,12 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] space-y-8 py-12">
-      <div className="text-center space-y-6 max-w-4xl px-4">
+      {/* Skip Link for keyboard users */}
+      <a href="#content" className="sr-only focus:not-sr-only">
+        Skip to content
+      </a>
+
+      <header id="content" className="text-center space-y-6 max-w-4xl px-4">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           Welcome to Insurance Pro
         </h1>
@@ -27,14 +32,31 @@ const LandingPage: React.FC = () => {
           annually, Insurance Pro replaces traditional paperwork with an
           intelligent, secure, and efficient document management system.
         </p>
-      </div>
+      </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4">
-        <Card className="border-2">
+      <section
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4"
+        aria-labelledby="features-heading"
+      >
+        <h2 id="features-heading" className="sr-only">
+          Key Features
+        </h2>
+
+        <Card
+          className="border-2"
+          role="region"
+          aria-labelledby="document-processing-title"
+        >
           <CardHeader>
             <div className="flex items-center space-x-2">
-              <FileText className="h-6 w-6 text-blue-600" />
-              <CardTitle>Document Processing</CardTitle>
+              <FileText
+                aria-hidden="true"
+                focusable="false"
+                className="h-6 w-6 text-blue-600"
+              />
+              <CardTitle id="document-processing-title">
+                Document Processing
+              </CardTitle>
             </div>
             <CardDescription>
               Advanced form management and validation
@@ -49,11 +71,21 @@ const LandingPage: React.FC = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-2">
+        <Card
+          className="border-2"
+          role="region"
+          aria-labelledby="global-accessibility-title"
+        >
           <CardHeader>
             <div className="flex items-center space-x-2">
-              <Users className="h-6 w-6 text-green-600" />
-              <CardTitle>Global Accessibility</CardTitle>
+              <Users
+                aria-hidden="true"
+                focusable="false"
+                className="h-6 w-6 text-green-600"
+              />
+              <CardTitle id="global-accessibility-title">
+                Global Accessibility
+              </CardTitle>
             </div>
             <CardDescription>
               Multi-region support with role-based access
@@ -68,11 +100,21 @@ const LandingPage: React.FC = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-2">
+        <Card
+          className="border-2"
+          role="region"
+          aria-labelledby="enterprise-security-title"
+        >
           <CardHeader>
             <div className="flex items-center space-x-2">
-              <Shield className="h-6 w-6 text-purple-600" />
-              <CardTitle>Enterprise Security</CardTitle>
+              <Shield
+                aria-hidden="true"
+                focusable="false"
+                className="h-6 w-6 text-purple-600"
+              />
+              <CardTitle id="enterprise-security-title">
+                Enterprise Security
+              </CardTitle>
             </div>
             <CardDescription>
               Robust security and compliance features
@@ -86,13 +128,14 @@ const LandingPage: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-      </div>
+      </section>
 
       <div className="flex flex-col items-center space-y-4 mt-8">
         <Button
           size="sm"
           onClick={() => navigate('/form')}
           className="px-8 py-6 text-lg border-2 border-transparent hover:border-black"
+          aria-label="Start managing documents"
         >
           Start Managing Documents
         </Button>
