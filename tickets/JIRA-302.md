@@ -17,10 +17,15 @@ Implement an advanced search system that enables users to efficiently find docum
 
 ### Example Search Queries  
 "Niaz Haque"
+
 department:IT
+
 status:pending
+
 date:2024-01-01..2024-02-01
+
 region:EU
+
 type:contract
 
 ### Acceptance Criteria  
