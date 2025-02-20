@@ -20,7 +20,7 @@ Implement an advanced search system that enables users to efficiently find docum
 
 costCenter:NN-211-DSA
 
-starDate:2024-01-01..2024-02-01
+startDate:2024-01-01..2024-02-01
 
 supervisorEmail:John.doe@th4d.ca
 
