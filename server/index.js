@@ -3,6 +3,8 @@ import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import dotenv from 'dotenv';
+import upload from './src/config/multerConfig.js';
+import FileController from './src/controllers/fileController.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -85,9 +87,13 @@ app.get('/api/submissions', (req, res) => {
   res.json(submissions);
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, '../dist/index.html'));
+app.get('/', (req, res) => {
+  res.json({ message: 'API is running!' });
 });
+
+app.post('/api/files/upload', upload.single('file'), FileController.uploadFile);
+
+app.get('/api/files/fetch', FileController.getFiles);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
